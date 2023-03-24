@@ -8,11 +8,12 @@ public class TyperController : MonoBehaviour {
     
     public static MonoBehaviour _instance = null;
     public Text wordOutput = null;
+    public Text timerOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if else", "example code", "generic code", "crustaceo", "test"};
     private string currentWord = string.Empty;
-    
-    public Text timerOutput = null;
+    private bool errorInTheWord = false;
+    private int wordStrak = 0;
     private float timer = 60;
 
     public static MonoBehaviour Instance() {
@@ -76,9 +77,15 @@ public class TyperController : MonoBehaviour {
     }
     
     public void wordError() {
+        wordStrak = 0;
         StartCoroutine(errorTick());
         setRemainingWords(currentWord);
-        this.removeTime(5);
+        if (!errorInTheWord){
+            removeTime(5);
+            ((GameController)GameController.Instance()).setComboMultiplier(1);
+            errorInTheWord = true;
+        }else
+            removeTime(1);
     }
 
     /**
@@ -91,6 +98,10 @@ public class TyperController : MonoBehaviour {
             if (isWordComplete()) {
                 ((GameController)GameController.Instance()).addMoney(this.currentWord);
                 setNextWord();
+                errorInTheWord = false;
+                wordStrak++;
+                if(wordStrak % 3 == 0)
+                    ((GameController)GameController.Instance()).setComboMultiplier(((GameController)GameController.Instance()).getComboMultiplier() + 1);
             }
         } else
             wordError();

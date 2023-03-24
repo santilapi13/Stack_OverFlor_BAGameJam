@@ -9,10 +9,25 @@ public class GameController : MonoBehaviour {
     
     public static MonoBehaviour _instance = null;
     public Text moneyOutput = null;
+    public Text comboOutput = null;
     private int money = 0;
     private int wordMultiplier = 2;
+    private int comboMultiplier = 1;
     
     private int level = 0;
+
+    public int getComboMultiplier() {
+        return comboMultiplier;
+    }
+
+    public void setComboMultiplier(int comboMultiplier) {
+        this.comboMultiplier = comboMultiplier;
+        updateCombo();
+    }
+
+    public void updateCombo() {
+        comboOutput.text = "X" + comboMultiplier;
+    }
 
     public int getLevel() {
         return level;
@@ -28,7 +43,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void addMoney(string word) {
-        money += word.Length * this.wordMultiplier;
+        money += word.Length * this.wordMultiplier * comboMultiplier;
         updateMoney();
     }
     
@@ -50,7 +65,9 @@ public class GameController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
+        
         updateMoney();
+        updateCombo();
     }
 
     // Update is called once per frame

@@ -25,10 +25,18 @@ public class Baby : Distraction {
         
     }
 
+    private void OnMouseDown() {
+        if(GetComponent<SpriteRenderer>().color == Color.red) 
+            GetComponent<SpriteRenderer>().color = Color.green;
+    }
+
+
     // Update is called once per frame
     void Update() {
-        if ((int) Math.Round(((DistractionController)DistractionController.Instance()).timer) == 55) {
-            GetComponent<SpriteRenderer>().color = Color.red;
+        if ((int) Math.Round(((DistractionController)DistractionController.Instance()).timer)%7 == 0) {
+            GetComponent<SpriteRenderer>().color = Color.red; 
         }
+
+
     }
 }
