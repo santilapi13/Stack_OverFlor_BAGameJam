@@ -11,11 +11,17 @@ public class GameController : MonoBehaviour {
     public Text moneyOutput = null;
     private int money = 0;
     private int wordMultiplier = 2;
+    
+    private int level = 0;
+
+    public int getLevel() {
+        return level;
+    }
 
     public int getMoney() {
         return money;
     }
-    
+
     public void addMoney(int newMoney) {
         money += newMoney;
         updateMoney();
@@ -34,7 +40,7 @@ public class GameController : MonoBehaviour {
     private void updateMoney() {
         moneyOutput.text = "Dinero: " + money;
     }
-    
+
     public static MonoBehaviour Instance() {
         if (_instance == null) {
             _instance = GameObject.FindObjectOfType<GameController>();
@@ -49,6 +55,6 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
     }
 }

@@ -1,32 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Typer : MonoBehaviour {
+public class TyperController : MonoBehaviour {
     
+    public static MonoBehaviour _instance = null;
     public Text wordOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if else", "example code", "generic code", "crustaceo", "test"};
     private string currentWord = string.Empty;
     
-    // Start is called before the first frame update
-    void Start() {
-        setNextWord();
-    }
+    public Text timerOutput = null;
+    private float timer = 60;
 
-       // Update is called once per frame
-    void Update() {
-        checkInput();
+    public static MonoBehaviour Instance() {
+        if (_instance == null) {
+            _instance = GameObject.FindObjectOfType<TyperController>();
+        }
+        return _instance;
     }
-
+    
+    public float getTimer() {
+        return timer;
+    }
+    
+    public void removeTime(float time) {
+        if (timer - time > 0)
+            timer -= time;
+        else
+            timer = 0;
+        updateTimer();
+    }
+    
+    private void updateTimer() {
+        timerOutput.text = "Tiempo: " + Mathf.Round(timer);
+    }
+    
     private void setNextWord() {
-       setRemainWord(nextWord[Random.Range(0, nextWord.Length)]);
-       setCurrenWord(remainingWord);
+       setRemainingWords(nextWord[Random.Range(0, nextWord.Length)]);
+       setCurrentWord(remainingWord);
     }
     
     
-    private void setCurrenWord(string newString) {
+    private void setCurrentWord(string newString) {
         currentWord = newString;
     }
 
@@ -34,7 +52,7 @@ public class Typer : MonoBehaviour {
      * It sets the remaining word to the new string.
      * @param newString: The new string to set.
      */
-    private void setRemainWord(string newString) {
+    private void setRemainingWords(string newString) {
         remainingWord = newString;
         wordOutput.text = remainingWord;
     }
@@ -51,19 +69,31 @@ public class Typer : MonoBehaviour {
         }
     }
 
+    private IEnumerator errorTick() {
+        wordOutput.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        wordOutput.color = Color.white;
+    }
+    
+    public void wordError() {
+        StartCoroutine(errorTick());
+        setRemainingWords(currentWord);
+        this.removeTime(5);
+    }
+
     /**
      * It checks if the letter is correct and if it is, it removes it from the word.
      * @param letter: The letter to check.
      */
     private void enterLetter(string letter) {
-        if(isCorrectLetter(letter)) {
+        if (isCorrectLetter(letter)) {
             removeLetter();
             if (isWordComplete()) {
-                ((GameController) GameController.Instance()).addMoney(this.currentWord);
+                ((GameController)GameController.Instance()).addMoney(this.currentWord);
                 setNextWord();
             }
         } else
-            setRemainWord(currentWord);
+            wordError();
     }
     
     /**
@@ -80,7 +110,7 @@ public class Typer : MonoBehaviour {
      */
     private void removeLetter() {
         string newString = remainingWord.Remove(0, 1);
-        setRemainWord(newString);
+        setRemainingWords(newString);
     }
 
     /**
@@ -90,7 +120,23 @@ public class Typer : MonoBehaviour {
     private bool isWordComplete() {
         return remainingWord.Length == 0;
     }
+    
+    
+    // Start is called before the first frame update
+    void Start() {
+        setNextWord();
+        updateTimer();
+    }
 
-
-
+    // Update is called once per frame
+    void Update() {
+        if (timer > 0) {
+            this.removeTime(Time.deltaTime);
+            checkInput();
+        } else {
+            wordOutput.color = Color.red;
+            wordOutput.text = "Game Over";
+        }
+    }
+    
 }
