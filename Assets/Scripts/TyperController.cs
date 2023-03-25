@@ -8,10 +8,12 @@ public class TyperController : MonoBehaviour {
     
     public static MonoBehaviour _instance = null;
     public Text wordOutput = null;
+    public Text nextWordOutput = null;
     public Text timerOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if else", "example code", "generic code", "crustaceo", "test"};
     private string currentWord = string.Empty;
+    private string comingWord = string.Empty;
     private bool errorInTheWord = false;
     private int wordStrak = 0;
     private float timer = 60;
@@ -40,9 +42,19 @@ public class TyperController : MonoBehaviour {
     }
     
     private void setNextWord() {
-       setRemainingWords(nextWord[Random.Range(0, nextWord.Length)]);
+       if(comingWord == string.Empty)
+           setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
+       setRemainingWords(comingWord);
+       setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
        setCurrentWord(remainingWord);
     }
+
+    private void setComingWord(string newString) {
+        comingWord = newString;
+        nextWordOutput.text = comingWord;
+    }
+    
+
     
     
     private void setCurrentWord(string newString) {

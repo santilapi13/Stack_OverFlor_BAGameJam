@@ -7,6 +7,8 @@ using UnityEngine;
 public class Baby : Distraction {
     
     public static MonoBehaviour _instance = null;
+    private bool isRed = false;
+    public int distractionTime;
     
     private Baby() {
         this.times = new float[] { 5 };
@@ -26,15 +28,28 @@ public class Baby : Distraction {
     }
 
     private void OnMouseDown() {
-        if(GetComponent<SpriteRenderer>().color == Color.red) 
+        if(isRed){
             GetComponent<SpriteRenderer>().color = Color.green;
+            isRed = false;
+        }   
+    }
+
+    private IEnumerator Wait(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        if(isRed){
+            GetComponent<SpriteRenderer>().color = Color.green;
+            ((TyperController)TyperController.Instance()).wordError();
+            isRed = false;
+        }
     }
 
 
     // Update is called once per frame
     void Update() {
-        if ((int) Math.Round(((DistractionController)DistractionController.Instance()).timer)%7 == 0) {
-            GetComponent<SpriteRenderer>().color = Color.red; 
+        if ((int) Math.Round(((DistractionController)DistractionController.Instance()).timer)%distractionTime == 0) {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            isRed = true; 
+            StartCoroutine(Wait(3));
         }
 
 
