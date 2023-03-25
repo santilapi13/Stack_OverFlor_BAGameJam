@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
     public Text moneyOutput = null;
     public Text comboOutput = null;
     private int money = 0;
-    private int wordMultiplier = 2;
+    private int wordMultiplier = 200;
     private int comboMultiplier = 1;
     
     private int level = 0;
@@ -53,7 +53,11 @@ public class GameController : MonoBehaviour {
     }
 
     private void updateMoney() {
-        moneyOutput.text = "Dinero: " + money;
+        if(money < 1000)
+            moneyOutput.text = money.ToString();
+        else
+            moneyOutput.text = money/1000 + "." + (money%1000)/100 + "k";   
+
     }
 
     public static MonoBehaviour Instance() {
