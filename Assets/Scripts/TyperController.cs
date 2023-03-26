@@ -9,10 +9,12 @@ public class TyperController : MonoBehaviour {
     public Text wordOutput = null;
     public Text nextWordOutput = null;
     public Text timerOutput = null;
+    public Text writedWordOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if (x > 0)", "printf('total')", "for (int i = 0", "while (true)", "return 0;", "void function()"};
     private string currentWord = string.Empty;
     private string comingWord = string.Empty;
+    private string writedWord = string.Empty;
     private bool errorInTheWord = false;
     private int wordStrak = 0;
     private float timer = 60;
@@ -51,6 +53,7 @@ public class TyperController : MonoBehaviour {
        setRemainingWords(comingWord);
        setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
        setCurrentWord(remainingWord);
+       setWritedWord(string.Empty);
     }
 
     private void setComingWord(string newString) {
@@ -74,6 +77,11 @@ public class TyperController : MonoBehaviour {
         wordOutput.text = remainingWord;
     }
 
+    private void setWritedWord(string newString) {
+        writedWord = newString;
+        writedWordOutput.text = writedWord;
+    }
+
     /**
      * It checks if the user has pressed a key and if it is, it checks if only one key is pressed (in the same frame).
      * If only one is pressed, it calls the enterLetter method to check if the letter is correct.
@@ -89,13 +97,14 @@ public class TyperController : MonoBehaviour {
     private IEnumerator errorTick() {
         wordOutput.color = Color.red;
         yield return new WaitForSeconds(0.3f);
-        wordOutput.color = Color.white;
+        wordOutput.color = Color.grey;
     }
     
     public void wordError() {
         wordStrak = 0;
         StartCoroutine(errorTick());
         setRemainingWords(currentWord);
+        setWritedWord(string.Empty);
         if (!errorInTheWord){
             removeTime(5);
             GameController.instance.setComboMultiplier(1);
@@ -136,6 +145,7 @@ public class TyperController : MonoBehaviour {
      * It removes the next letter of the word.
      */
     private void removeLetter() {
+        setWritedWord(writedWord + remainingWord[0]);
         string newString = remainingWord.Remove(0, 1);
         setRemainingWords(newString);
     }
