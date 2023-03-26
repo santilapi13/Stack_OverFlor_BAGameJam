@@ -10,7 +10,7 @@ public class TyperController : MonoBehaviour {
     public Text nextWordOutput = null;
     public Text timerOutput = null;
     private string remainingWord = string.Empty;
-    private string[] nextWord = {"hello world", "if else", "example code", "generic code", "crustaceo", "test"};
+    private string[] nextWord = {"hello world", "if (x > 0)", "printf('total')", "for (int i = 0", "while (true)", "return 0;", "void function()"};
     private string currentWord = string.Empty;
     private string comingWord = string.Empty;
     private bool errorInTheWord = false;
