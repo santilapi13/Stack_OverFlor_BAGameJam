@@ -17,13 +17,6 @@ public class DistractionController : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        /*
-        distractions.Clear();
-        switch (((GameController) GameController.Instance()).getChapter()) {
-            case 0: {   // Tutorial
-                distractions.Add(((Baby) Baby.Instance()));
-            }
-        } */
     }
 
     // Update is called once per frame

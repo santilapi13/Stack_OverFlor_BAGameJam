@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TyperController : MonoBehaviour {
     
-    public static MonoBehaviour _instance = null;
     public Text wordOutput = null;
     public Text nextWordOutput = null;
     public Text timerOutput = null;
@@ -18,11 +17,16 @@ public class TyperController : MonoBehaviour {
     private int wordStrak = 0;
     private float timer = 60;
 
-    public static MonoBehaviour Instance() {
-        if (_instance == null) {
-            _instance = GameObject.FindObjectOfType<TyperController>();
-        }
-        return _instance;
+    // Singleton instance.
+    public static TyperController instance = null;
+	
+    // Initialize the singleton instance.
+    private void Awake() {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad (gameObject);
     }
     
     public float getTimer() {
@@ -94,7 +98,7 @@ public class TyperController : MonoBehaviour {
         setRemainingWords(currentWord);
         if (!errorInTheWord){
             removeTime(5);
-            ((GameController)GameController.Instance()).setComboMultiplier(1);
+            GameController.instance.setComboMultiplier(1);
             errorInTheWord = true;
         }else
             removeTime(1);
@@ -108,12 +112,12 @@ public class TyperController : MonoBehaviour {
         if (isCorrectLetter(letter)) {
             removeLetter();
             if (isWordComplete()) {
-                ((GameController)GameController.Instance()).addMoney(this.currentWord);
+                GameController.instance.addMoney(this.currentWord);
                 setNextWord();
                 errorInTheWord = false;
                 wordStrak++;
                 if(wordStrak % 3 == 0)
-                    ((GameController)GameController.Instance()).setComboMultiplier(((GameController)GameController.Instance()).getComboMultiplier() + 1);
+                    GameController.instance.setComboMultiplier(GameController.instance.getComboMultiplier() + 1);
             }
         } else
             wordError();
@@ -157,6 +161,7 @@ public class TyperController : MonoBehaviour {
             this.removeTime(Time.deltaTime);
             checkInput();
         } else {
+            nextWordOutput.text = "";
             wordOutput.color = Color.red;
             wordOutput.text = "Game Over";
         }
