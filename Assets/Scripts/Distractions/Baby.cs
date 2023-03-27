@@ -6,32 +6,35 @@ using UnityEngine;
 
 public class Baby : Distraction {
 
-    public static MonoBehaviour _instance = null;
+    // Singleton instance.
+    public static Baby instance = null;
+	
+    // Initialize the singleton instance.
+    private void Awake() {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad (gameObject);
+    }
 
     private Baby() {
         this.times = new int[] { 55, 32, 21, 15, 3 };
         this.levels = new int[] { 0 };
         this.reactionTime = 3;
-    }
-
-    public static MonoBehaviour Instance() {
-        if (_instance == null) {
-            _instance = GameObject.FindObjectOfType<Baby>();
-        }
-        return _instance;
+        this.positions = new Vector3[] { new Vector3(4, -2, -2), new Vector3(3, -1, -2), new Vector3(4, 0, -2) };
     }
 
     private void OnMouseDown() {
         if (isActivated) {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            GetComponent<SpriteRenderer>().enabled = false;
             isActivated = false;
         }   
     }
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

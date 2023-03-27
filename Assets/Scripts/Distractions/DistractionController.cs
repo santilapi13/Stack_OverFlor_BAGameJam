@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class DistractionController : MonoBehaviour {
     
-    public static MonoBehaviour _instance = null;
     public float timer = 60;
     private ArrayList distractions = new ArrayList();
     
-    public static MonoBehaviour Instance() {
-        if (_instance == null) {
-            _instance = GameObject.FindObjectOfType<DistractionController>();
+    // Singleton instance.
+        public static DistractionController instance = null;
+    	
+        // Initialize the singleton instance.
+        private void Awake() {
+            if (instance == null)
+                instance = this;
+            else if (instance != this)
+                Destroy(gameObject);
+            DontDestroyOnLoad (gameObject);
         }
-        return _instance;
-    }
     
     // Start is called before the first frame update
     void Start() {

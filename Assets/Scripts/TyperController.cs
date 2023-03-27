@@ -10,7 +10,7 @@ public class TyperController : MonoBehaviour {
     public Text nextWordOutput = null;
     public Text timerOutput = null;
     private string remainingWord = string.Empty;
-    private string[] nextWord = {"hello world", "if (x > 0)", "printf('total')", "for (int i = 0", "while (true)", "return 0;", "void function()"};
+    private string[] nextWord = {"hello world", "if (x > 0)", "print(total)", "while (true)", "return 0;", "void function()"};
     private string comingWord = string.Empty;
     private string writedWord = string.Empty;
     private bool errorInTheWord = false;
@@ -59,9 +59,6 @@ public class TyperController : MonoBehaviour {
         nextWordOutput.text = comingWord;
     }
     
-
-    
-    
     /**
      * It sets the remaining word to the new string.
      * @param newString: The new string to set.
@@ -70,7 +67,6 @@ public class TyperController : MonoBehaviour {
         remainingWord = newString;
         wordOutput.text = remainingWord;
     }
-
 
     /**
      * It checks if the user has pressed a key and if it is, it checks if only one key is pressed (in the same frame).
@@ -108,9 +104,9 @@ public class TyperController : MonoBehaviour {
      * @param letter: The letter to check.
      */
     private void enterLetter(string letter) {
-        if (isCorrectLetter(letter)) {
+        if (remainingWord[letterindex] == letter[0]) {
             removeLetter();
-            if (isWordComplete()) {
+            if (remainingWord.Length == letterindex) {
                 GameController.instance.addMoney(this.remainingWord);
                 setNextWord();
                 errorInTheWord = false;
@@ -122,15 +118,6 @@ public class TyperController : MonoBehaviour {
         } else
             wordError();
     }
-    
-    /**
-     * It checks if the letter is the next letter of the word.
-     * @param letter: The letter to check.
-     * @return True if the letter is the next letter of the word, false otherwise.
-     */
-    private bool isCorrectLetter(string letter) {
-        return remainingWord[letterindex] == letter[0];
-    }
 
     /**
      * It removes the next letter of the word.
@@ -139,19 +126,11 @@ public class TyperController : MonoBehaviour {
         wordOutput.text = remainingWord;
         string textoVerde = wordOutput.text.Substring(0, letterindex + 1);
         string textoPoste = wordOutput.text.Substring(letterindex + 1);
-        wordOutput.text = "<color=#" + UnityEngine.ColorUtility.ToHtmlStringRGB(colorDestino) + ">" + textoVerde + "</color>" + textoPoste;
+        wordOutput.text = "<color=#" + UnityEngine.ColorUtility.ToHtmlStringRGB(colorDestino) + ">" + textoVerde +
+                          "</color>" + textoPoste;
         letterindex++;
     }
 
-    /**
-     * It checks if the word was fully typed.
-     * @return True if the word was fully typed, false otherwise.
-     */
-    private bool isWordComplete() {
-        return remainingWord.Length == letterindex;
-    }
-    
-    
     // Start is called before the first frame update
     void Start() {
         setNextWord();
