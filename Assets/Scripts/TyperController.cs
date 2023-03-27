@@ -9,15 +9,15 @@ public class TyperController : MonoBehaviour {
     public Text wordOutput = null;
     public Text nextWordOutput = null;
     public Text timerOutput = null;
-    public Text writedWordOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if (x > 0)", "printf('total')", "for (int i = 0", "while (true)", "return 0;", "void function()"};
-    private string currentWord = string.Empty;
     private string comingWord = string.Empty;
     private string writedWord = string.Empty;
     private bool errorInTheWord = false;
     private int wordStrak = 0;
+    private int letterindex = 0;
     private float timer = 60;
+    private Color colorDestino = Color.green;
 
     // Singleton instance.
     public static TyperController instance = null;
@@ -52,8 +52,6 @@ public class TyperController : MonoBehaviour {
            setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
        setRemainingWords(comingWord);
        setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
-       setCurrentWord(remainingWord);
-       setWritedWord(string.Empty);
     }
 
     private void setComingWord(string newString) {
@@ -64,10 +62,6 @@ public class TyperController : MonoBehaviour {
 
     
     
-    private void setCurrentWord(string newString) {
-        currentWord = newString;
-    }
-
     /**
      * It sets the remaining word to the new string.
      * @param newString: The new string to set.
@@ -77,10 +71,6 @@ public class TyperController : MonoBehaviour {
         wordOutput.text = remainingWord;
     }
 
-    private void setWritedWord(string newString) {
-        writedWord = newString;
-        writedWordOutput.text = writedWord;
-    }
 
     /**
      * It checks if the user has pressed a key and if it is, it checks if only one key is pressed (in the same frame).
@@ -102,9 +92,9 @@ public class TyperController : MonoBehaviour {
     
     public void wordError() {
         wordStrak = 0;
+        letterindex = 0;
+        wordOutput.text = remainingWord;
         StartCoroutine(errorTick());
-        setRemainingWords(currentWord);
-        setWritedWord(string.Empty);
         if (!errorInTheWord){
             removeTime(5);
             GameController.instance.setComboMultiplier(1);
@@ -121,10 +111,11 @@ public class TyperController : MonoBehaviour {
         if (isCorrectLetter(letter)) {
             removeLetter();
             if (isWordComplete()) {
-                GameController.instance.addMoney(this.currentWord);
+                GameController.instance.addMoney(this.remainingWord);
                 setNextWord();
                 errorInTheWord = false;
                 wordStrak++;
+                letterindex = 0;
                 if(wordStrak % 3 == 0)
                     GameController.instance.setComboMultiplier(GameController.instance.getComboMultiplier() + 1);
             }
@@ -138,16 +129,18 @@ public class TyperController : MonoBehaviour {
      * @return True if the letter is the next letter of the word, false otherwise.
      */
     private bool isCorrectLetter(string letter) {
-        return remainingWord.IndexOf(letter) == 0;
+        return remainingWord[letterindex] == letter[0];
     }
 
     /**
      * It removes the next letter of the word.
      */
     private void removeLetter() {
-        setWritedWord(writedWord + remainingWord[0]);
-        string newString = remainingWord.Remove(0, 1);
-        setRemainingWords(newString);
+        wordOutput.text = remainingWord;
+        string textoVerde = wordOutput.text.Substring(0, letterindex + 1);
+        string textoPoste = wordOutput.text.Substring(letterindex + 1);
+        wordOutput.text = "<color=#" + UnityEngine.ColorUtility.ToHtmlStringRGB(colorDestino) + ">" + textoVerde + "</color>" + textoPoste;
+        letterindex++;
     }
 
     /**
@@ -155,7 +148,7 @@ public class TyperController : MonoBehaviour {
      * @return True if the word was fully typed, false otherwise.
      */
     private bool isWordComplete() {
-        return remainingWord.Length == 0;
+        return remainingWord.Length == letterindex;
     }
     
     
@@ -163,6 +156,10 @@ public class TyperController : MonoBehaviour {
     void Start() {
         setNextWord();
         updateTimer();
+    }
+
+    void changeLleterColor() {
+        
     }
 
     // Update is called once per frame
