@@ -19,7 +19,7 @@ public class Baby : Distraction {
     }
 
     private Baby() {
-        this.times = new int[] { 55, 32, 21, 15, 3 };
+        this.times = new int[] { 45, 32, 21, 15, 3 };
         this.levels = new int[] { 0 };
         this.reactionTime = 3;
         this.positions = new Vector3[] { new Vector3(4, -2, -2), new Vector3(3, -1, -2), new Vector3(4, 0, -2) };

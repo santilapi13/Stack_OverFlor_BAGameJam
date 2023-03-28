@@ -27,6 +27,11 @@ public abstract class Distraction : MonoBehaviour {
         
         while (!isActivated && i < times.Length && !activate) {
             activate = ((int) Math.Round(DistractionController.instance.timer) == times[i]);
+            if (activate){
+                List<int> time = new List<int>(times);
+                time.RemoveAt(i);
+                times = time.ToArray();
+            }
             i++;
         }
         
