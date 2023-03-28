@@ -18,7 +18,18 @@ public class Dialogos : MonoBehaviour
     
    void Start() 
     {
-        StartCoroutine(startDialogue());
+        //StartCoroutine(startDialogue());
+    }
+
+    private void Update() 
+    {
+        bool down = Input.GetKeyDown(KeyCode.Space);
+        if(down)
+        {
+        show(indiceMensaje);
+        Debug.Log(indiceMensaje);
+        indiceMensaje++;
+        }
     }
 
     public void show(int i)
@@ -27,7 +38,7 @@ public class Dialogos : MonoBehaviour
         Debug.Log(i);
     }
 
-    public IEnumerator startDialogue()
+    /*public IEnumerator startDialogue()
     {  
         for (int i = 0; i < 3; i++)
         {
@@ -37,7 +48,7 @@ public class Dialogos : MonoBehaviour
         }
 
     }
-
+*/
 
 
 }
