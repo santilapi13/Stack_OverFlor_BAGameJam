@@ -7,6 +7,7 @@ public class Cat : Distraction
       // Singleton instance.
     public static Cat instance = null;
     private int numberOfClicks = 0;
+    public Sprite[] sprites;
 	
     // Initialize the singleton instance.
     private void Awake() {
@@ -16,8 +17,7 @@ public class Cat : Distraction
             Destroy(gameObject);
         DontDestroyOnLoad (gameObject);
     }
-
-
+    
      private Cat() {
         this.times = new int[] {55};
         this.levels = new int[] { 0 };
@@ -25,17 +25,17 @@ public class Cat : Distraction
         this.positions = new Vector3[] { new Vector3(-4, 1, -2), new Vector3(-3, 0, -2), new Vector3(-4, -1, -2)};
     }
 
-    private void OnMouseDown(){
+    private void OnMouseDown() {
         if (isActivated) {
-            if(numberOfClicks == 2){
+            if (numberOfClicks == 2) {
                 GetComponent<SpriteRenderer>().enabled = false;
                 isActivated = false;
-            }else{
+                numberOfClicks = 0;
+            } else {
                 numberOfClicks++;
                 spawnAtRandomPosition();
-
             }
-            
+            GetComponent<SpriteRenderer>().sprite = sprites[numberOfClicks];
         }   
     }
 

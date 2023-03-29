@@ -28,7 +28,7 @@ public abstract class Distraction : MonoBehaviour {
         
         while (!isActivated && i < times.Length && !activate) {
             activate = ((int) Math.Round(DistractionController.instance.timer) == times[i]);
-            if (activate){
+            if (activate) {
                 List<int> time = new List<int>(times);
                 time.RemoveAt(i);
                 times = time.ToArray();
@@ -58,7 +58,7 @@ public abstract class Distraction : MonoBehaviour {
             spawnAtRandomPosition();
             GetComponent<SpriteRenderer>().enabled = true;
             StartCoroutine(Wait(reactionTime));
-        }else if (TyperController.instance.getTimer() == 0){
+        } else if (TyperController.instance.getTimer() == 0) {
             GetComponent<SpriteRenderer>().enabled = false;
             isActivated = false;
         }

@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     private int comboMultiplier = 1;
     
     private int level = 0;
+    
       // Singleton instance.
     public static GameController instance = null;
 	
@@ -40,6 +41,10 @@ public class GameController : MonoBehaviour {
 
     public int getLevel() {
         return level;
+    }
+
+    public void nextLevel() {
+        this.level++;
     }
 
     public int getMoney() {
@@ -72,7 +77,6 @@ public class GameController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        
         updateMoney();
         updateCombo();
     }

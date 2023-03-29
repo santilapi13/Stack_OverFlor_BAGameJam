@@ -44,7 +44,5 @@ public class Baby : Distraction {
         base.Update();
         animator.SetBool("IsActive", isActivated);
     }
-
-
-
+    
 }
