@@ -10,7 +10,8 @@ public abstract class Distraction : MonoBehaviour {
     protected int[] levels = null;
     protected bool isActivated = false;
     protected int reactionTime;
-    protected Vector3[] positions;  
+    protected Vector3[] positions; 
+    protected Animator animator;
 
     protected IEnumerator Wait(float seconds) {
         yield return new WaitForSeconds(seconds);
@@ -40,14 +41,16 @@ public abstract class Distraction : MonoBehaviour {
 
     protected void spawnAtRandomPosition() {
         int rndm = Random.Range(0, positions.Length);
+        while(GetComponent<Transform>().position == positions[rndm])
+            rndm = Random.Range(0, positions.Length);
         GetComponent<Transform>().position = positions[rndm];
     }
+
+
     
     // Start is called before the first frame update
     void Start() {
-
     }
-
     // Update is called once per frame
     protected void Update() {
         if (mustActivate() && TyperController.instance.getTimer() > 0) {
@@ -55,6 +58,9 @@ public abstract class Distraction : MonoBehaviour {
             spawnAtRandomPosition();
             GetComponent<SpriteRenderer>().enabled = true;
             StartCoroutine(Wait(reactionTime));
+        }else if (TyperController.instance.getTimer() == 0){
+            GetComponent<SpriteRenderer>().enabled = false;
+            isActivated = false;
         }
     }
 }

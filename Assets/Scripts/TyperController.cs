@@ -44,7 +44,7 @@ public class TyperController : MonoBehaviour {
     }
     
     private void updateTimer() {
-        timerOutput.fillAmount = 1 - (timer / 60);
+        timerOutput.fillAmount = (timer / 60);
     }
     
     private void setNextWord() {
