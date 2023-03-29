@@ -8,7 +8,7 @@ public class TyperController : MonoBehaviour {
     
     public Text wordOutput = null;
     public Text nextWordOutput = null;
-    public Text timerOutput = null;
+    public Image timerOutput = null;
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hello world", "if (x > 0)", "print(total)", "while (true)", "return 0;", "void function()"};
     private string comingWord = string.Empty;
@@ -44,7 +44,7 @@ public class TyperController : MonoBehaviour {
     }
     
     private void updateTimer() {
-        timerOutput.text = "Tiempo: " + Mathf.Round(timer);
+        timerOutput.fillAmount = 1 - (timer / 60);
     }
     
     private void setNextWord() {
