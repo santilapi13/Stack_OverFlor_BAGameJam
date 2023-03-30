@@ -15,7 +15,6 @@ public class BlurredScreen : Distraction {
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-        DontDestroyOnLoad (gameObject);
     }
 
     private BlurredScreen() {

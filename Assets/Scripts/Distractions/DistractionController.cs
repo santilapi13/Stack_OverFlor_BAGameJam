@@ -16,7 +16,6 @@ public class DistractionController : MonoBehaviour {
                 instance = this;
             else if (instance != this)
                 Destroy(gameObject);
-            DontDestroyOnLoad (gameObject);
         }
     
     // Start is called before the first frame update
@@ -25,6 +24,7 @@ public class DistractionController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        timer -= Time.deltaTime;
+        if (!TyperController.instance.isPause())
+            timer -= Time.deltaTime;
     }
 }

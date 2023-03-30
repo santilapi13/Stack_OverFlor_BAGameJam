@@ -15,7 +15,6 @@ public class Cat : Distraction
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-        DontDestroyOnLoad (gameObject);
     }
     
      private Cat() {

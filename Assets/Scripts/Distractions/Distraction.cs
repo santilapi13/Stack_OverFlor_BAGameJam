@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public abstract class Distraction : MonoBehaviour {
     
-    protected int[] times;
+    public int[] times;
     protected int[] levels = null;
     protected bool isActivated = false;
     protected int reactionTime;
