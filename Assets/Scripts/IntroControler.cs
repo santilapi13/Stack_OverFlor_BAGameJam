@@ -8,7 +8,7 @@ public class IntroControler : MonoBehaviour
 {
     public Text wordOutput = null;
     public IntroControler instance = null;
-    private string remainingWord = "jugar";
+    private string remainingWord = "Jugar";
     private int letterindex = 0;
     private Color colorDestino = Color.green;
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class IntroControler : MonoBehaviour
     }    
 
     private void enterLetter(string letter) {
-        if (remainingWord[letterindex] == letter[0]) {
+        if ( char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
             removeLetter();
             if (remainingWord.Length == letterindex) {
                SceneManager.LoadScene("SampleTextScene");

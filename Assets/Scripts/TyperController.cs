@@ -10,7 +10,9 @@ public class TyperController : MonoBehaviour {
     public Text nextWordOutput = null;
     public Image timerOutput = null;
     private string remainingWord = string.Empty;
-    private string[] nextWord = {"hello world", "if (x > 0)", "print(total)", "while (true)", "return 0;", "void function()"};
+    private string[] nextWord = {"hola mundo","si(verdadero)","sino(falso)","variable=0","variable=2","\"palabra\"","mostrar(\"chau\")","error","mostrar(\"hola\")","declaracion","incluir","enetero","caracter","real","booleano",
+    "mientras","hacer","para","hasta","hastaque","romper","defecto","funcion","privada","estatica","retornar","objeto","clase","vacio","publico","protegido","nuevo","importar","paquete","principal","seguir;","continuar;","detener;",
+    "crustaceo","alinear","(x,y,z)","funcion(x,y,z)","funcion(12,5,3)","01101111","color.verde","color.azul","color.FF0000","jugar","error404"}; 
     private string comingWord = string.Empty;
     private string writedWord = string.Empty;
     private bool errorInTheWord = false;
@@ -104,7 +106,7 @@ public class TyperController : MonoBehaviour {
      * @param letter: The letter to check.
      */
     private void enterLetter(string letter) {
-        if (remainingWord[letterindex] == letter[0]) {
+        if (char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
             removeLetter();
             if (remainingWord.Length == letterindex) {
                 GameController.instance.addMoney(this.remainingWord);
