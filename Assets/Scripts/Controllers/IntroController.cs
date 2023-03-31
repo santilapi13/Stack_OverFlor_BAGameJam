@@ -34,7 +34,7 @@ public class IntroController : MonoBehaviour {
             removeLetter();
             if (remainingWord.Length == letterindex) {
                 FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
-                TrancicionsControler.instance.changeScene("Tutorial_0");
+                TransitionsController.instance.changeScene("Tutorial_0");
             }
         } 
     }
@@ -46,8 +46,7 @@ public class IntroController : MonoBehaviour {
         wordOutput.text = "<color=#" + UnityEngine.ColorUtility.ToHtmlStringRGB(colorDestino) + ">" + textoVerde + "</color>" + textoPoste;
         letterindex++;
     }
-    void Start()
-    {
+    void Start() {
         
     }
 

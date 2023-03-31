@@ -11,6 +11,8 @@ public class TyperController : MonoBehaviour {
     public Text wordOutput = null;
     public Text nextWordOutput = null;
     public Image timerOutput = null;
+    public GameObject message = null;
+    
     private string remainingWord = string.Empty;
     private static string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
     "while","hacer","for","repeat","until","break","default","funcion","function","static","return","objeto","clase","void","public","protected","nuevo","importar","package","main","seguir;","continuar;","detener;",
@@ -156,36 +158,49 @@ public class TyperController : MonoBehaviour {
         letterindex++;
     }
 
+    private void levelFinished() {
+        this.pause = true;
+        FXController.instance.effectSource.Stop();
+        updateTimer();
+        FXController.instance.PlayMiscEffect(FXController.MiscEffect.Message);
+        message.GetComponent<SpriteRenderer>().enabled = true;
+        nextWordOutput.color = Color.green;
+        nextWordOutput.text = "Nivel finalizado";
+        wordOutput.color = Color.green;
+        wordOutput.fontSize = 30;
+        wordOutput.text = "¡Nuevo mensaje!";
+    }
+
+    private void initialCountdown() {
+        introTimer = this.removeTime(Time.deltaTime, introTimer);
+        if (introTimer <= 0) {
+            pause = false;
+            setNextWord();
+            updateTimer();
+        } else {
+            wordOutput.text = Math.Round(introTimer).ToString();
+        }
+    }
+
     // Start is called before the first frame update
     void Start() {
+        message.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update() {
-        if (!pause) {
+        if (!pause)
             if (timer > 0) {
                 timer = this.removeTime(Time.deltaTime, timer);
                 checkInput();
-            } else {
-                updateTimer();
-                nextWordOutput.text = "";
-                wordOutput.color = Color.red;
-                wordOutput.text = "Game Over";
-            } 
-        } else {
-            if (Input.anyKeyDown && timer < 60) {
-                pause = false;
-            } else if (timer >= 60) {
-                introTimer = this.removeTime(Time.deltaTime, introTimer);
-                if (introTimer <= 0) {
-                    pause = false;
-                    setNextWord();
-                    updateTimer();
-                } else {
-                    wordOutput.text = Math.Round(introTimer).ToString();
-                }
-            }
-        }
+            } else
+                this.levelFinished();
+        else if (Input.anyKeyDown && timer < 60 && timer > 0)
+            pause = false;
+        else if (timer >= 60)
+            this.initialCountdown();
+        else if (timer <= 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
+            CinematicsControllers.instance.nextBackground();
     }
     
 }

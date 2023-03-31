@@ -10,6 +10,7 @@ public class FXController : MonoBehaviour {
     public AudioClip typingErrorEffect;
     public AudioClip typingSuccessEffect;
     public AudioClip transitionEffect;
+    public AudioClip messageEffect;
     
     public enum DistractionEffect {
         CatHappy,
@@ -25,6 +26,7 @@ public class FXController : MonoBehaviour {
     
     public enum MiscEffect {
         Transition,
+        Message,
     }
     
     // Singleton instance.
@@ -67,6 +69,8 @@ public class FXController : MonoBehaviour {
         switch (effect) {
             case MiscEffect.Transition: effectSource.PlayOneShot(transitionEffect);
                 break;
+            case MiscEffect.Message: effectSource.PlayOneShot(messageEffect);
+                break;
         }
     }
 
@@ -77,6 +81,5 @@ public class FXController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
     }
 }

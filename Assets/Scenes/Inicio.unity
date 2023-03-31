@@ -270,7 +270,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5734775310807854710, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
 --- !u!1 &842988378
 GameObject:
@@ -821,6 +822,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5397379252410594377, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
+      propertyPath: messageEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: c2cd4ae507fab1643a08a285d7392de9, type: 3}
     - target: {fileID: 5397379252410594378, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
       propertyPath: m_Name
       value: SoundEffectsController

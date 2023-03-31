@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TrancicionsControler : MonoBehaviour
+public class TransitionsController : MonoBehaviour
 {
-    static public TrancicionsControler instance;
+    static public TransitionsController instance;
     public Animator animator;
-
     
     private void Awake() {
         if (instance == null)
@@ -22,7 +21,7 @@ public class TrancicionsControler : MonoBehaviour
 
     private IEnumerator loadScene(string sceneName) {
         animator.SetTrigger("Start");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }
 

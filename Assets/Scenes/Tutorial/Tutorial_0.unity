@@ -157,7 +157,7 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 21300000, guid: 57b4fe7ba1c1f164a9d35433e0f249d0, type: 3}
   - {fileID: 21300000, guid: 681f2f91e592af7499ce4e9d9c49634f, type: 3}
-  currentScene: 1
+  nextScene: Tutorial_1
 --- !u!212 &415966085
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 420992544546629939, guid: fee8d3e092ab495478e1e8e0828f1aa5, type: 3}
       propertyPath: m_Name
-      value: EventSystem
+      value: FadeOutSystem
       objectReference: {fileID: 0}
     - target: {fileID: 420992544546629951, guid: fee8d3e092ab495478e1e8e0828f1aa5, type: 3}
       propertyPath: m_RootOrder
