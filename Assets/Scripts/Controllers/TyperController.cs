@@ -12,9 +12,10 @@ public class TyperController : MonoBehaviour {
     public Text nextWordOutput = null;
     public Image timerOutput = null;
     private string remainingWord = string.Empty;
-    private string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
+    private static string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
     "while","hacer","for","repeat","until","break","default","funcion","function","static","return","objeto","clase","void","public","protected","nuevo","importar","package","main","seguir;","continuar;","detener;",
     "crustaceo","align","(x,y,z)","sumar(a,b)","restar(a,c)","01101111","color.verde","color.azul","color=FF0000","jugar","error404"}; 
+    private List <string> words = new List<string>(nextWord);
     private string comingWord = string.Empty;
     private bool errorInTheWord = false;
     private int wordStreak = 0;
@@ -62,9 +63,18 @@ public class TyperController : MonoBehaviour {
     
     private void setNextWord() {
        if(comingWord == string.Empty)
-           setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
+           setComingWord(getWord());
        setRemainingWords(comingWord);
-       setComingWord(nextWord[Random.Range(0, nextWord.Length)]);
+       setComingWord(getWord());
+    }
+
+    private string getWord() {
+        int rndm = Random.Range(0, words.Count);
+        string word = words[rndm];
+        words.RemoveAt(rndm);
+        if(words.Count == 0)
+            words = new List<string>(nextWord);
+        return word;
     }
 
     private void setComingWord(string newString) {
