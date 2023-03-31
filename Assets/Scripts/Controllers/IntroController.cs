@@ -28,17 +28,13 @@ public class IntroController : MonoBehaviour {
         }
     }    
     
-    private IEnumerator sceneChange() {
-        yield return new WaitForSeconds(0.6f);
-        SceneManager.LoadScene("Tutorial_0");
-    }
 
     private void enterLetter(string letter) {
         if (char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
             removeLetter();
             if (remainingWord.Length == letterindex) {
                 FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
-                StartCoroutine(sceneChange());
+                TrancicionsControler.instance.changeScene("Tutorial_0");
             }
         } 
     }
