@@ -14,7 +14,7 @@ public class TyperController : MonoBehaviour {
     private string remainingWord = string.Empty;
     private string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
     "while","hacer","for","repeat","until","break","default","funcion","function","static","return","objeto","clase","void","public","protected","nuevo","importar","package","main","seguir;","continuar;","detener;",
-    "crustaceo","align","(x,y,z)","sumar(a,b)","restar(a,c)","01101111","color.verde","color.azul","color=#FF0000","jugar","error404"}; 
+    "crustaceo","align","(x,y,z)","sumar(a,b)","restar(a,c)","01101111","color.verde","color.azul","color=FF0000","jugar","error404"}; 
     private string comingWord = string.Empty;
     private bool errorInTheWord = false;
     private int wordStreak = 0;
@@ -100,6 +100,7 @@ public class TyperController : MonoBehaviour {
     }
     
     public void wordError() {
+        FXController.instance.PlayTypingEffect(FXController.TypingEffect.Error);
         wordStreak = 0;
         letterindex = 0;
         wordOutput.text = remainingWord;
@@ -120,12 +121,13 @@ public class TyperController : MonoBehaviour {
         if (char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
             removeLetter();
             if (remainingWord.Length == letterindex) {
+                FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
                 GameController.instance.addMoney(this.remainingWord);
                 setNextWord();
                 errorInTheWord = false;
                 wordStreak++;
                 letterindex = 0;
-                if(wordStreak % 3 == 0)
+                if (wordStreak % 3 == 0 && GameController.instance.getComboMultiplier() < 5)
                     GameController.instance.setComboMultiplier(GameController.instance.getComboMultiplier() + 1);
             }
         } else

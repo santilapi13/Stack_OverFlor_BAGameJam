@@ -22,15 +22,18 @@ public class Cat : Distraction
         this.levels = new int[] { 0 };
         this.reactionTime = 5;
         this.positions = new Vector3[] { new Vector3(-4, 1, -2), new Vector3(-3, 0, -2), new Vector3(-4, -1, -2)};
-    }
+        this.soundEffect = FXController.DistractionEffect.CatSad;
+     }
 
     private void OnMouseDown() {
         if (isActivated) {
             if (numberOfClicks == 2) {
+                FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatHappy);
                 GetComponent<SpriteRenderer>().enabled = false;
                 isActivated = false;
                 numberOfClicks = 0;
             } else {
+                FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatSad);
                 numberOfClicks++;
                 spawnAtRandomPosition();
             }

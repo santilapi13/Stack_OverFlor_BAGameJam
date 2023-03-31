@@ -5,7 +5,6 @@ using UnityEngine;
 public class AudioController : MonoBehaviour {
     
     public AudioSource musicSource;
-    public AudioSource effectsSource;
     public AudioClip noIntroMusic;
     
     // Singleton instance.
@@ -17,12 +16,6 @@ public class AudioController : MonoBehaviour {
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-    }
-
-    // Play a single clip through the sound effects source.
-    public void Play(AudioClip clip) {
-        effectsSource.clip = clip;
-        effectsSource.Play();
     }
 
     // Start is called before the first frame update

@@ -22,10 +22,13 @@ public class Baby : Distraction {
         this.levels = new int[] { 0 };
         this.reactionTime = 3;
         this.positions = new Vector3[] { new Vector3(4, -2, -4), new Vector3(3, -1, -4), new Vector3(4, 0, -4) };
+        this.soundEffect = FXController.DistractionEffect.BabySad;
     }
 
     private void OnMouseDown() {
         if (isActivated) {
+            FXController.instance.effectSource.Stop();
+            FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.BabyHappy);
             GetComponent<SpriteRenderer>().enabled = false;
             isActivated = false;
         }   

@@ -12,6 +12,7 @@ public abstract class Distraction : MonoBehaviour {
     protected int reactionTime;
     protected Vector3[] positions; 
     protected Animator animator;
+    protected FXController.DistractionEffect soundEffect;
 
     protected IEnumerator Wait(float seconds) {
         yield return new WaitForSeconds(seconds);
@@ -54,6 +55,7 @@ public abstract class Distraction : MonoBehaviour {
     // Update is called once per frame
     protected void Update() {
         if (mustActivate() && TyperController.instance.getTimer() > 0) {
+            FXController.instance.PlayDistractionEffect(soundEffect);
             isActivated = true;
             spawnAtRandomPosition();
             GetComponent<SpriteRenderer>().enabled = true;

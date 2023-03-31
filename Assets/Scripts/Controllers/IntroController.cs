@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class IntroController : MonoBehaviour {
     public Text wordOutput = null;
+    public Text constText = null;
     public IntroController instance = null;
     private string remainingWord = "Jugar";
     private int letterindex = 0;
@@ -33,9 +34,10 @@ public class IntroController : MonoBehaviour {
     }
 
     private void enterLetter(string letter) {
-        if ( char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
+        if (char.ToLower(remainingWord[letterindex]) == char.ToLower(letter[0])) {
             removeLetter();
             if (remainingWord.Length == letterindex) {
+                FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
                 StartCoroutine(sceneChange());
             }
         } 
@@ -54,8 +56,7 @@ public class IntroController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
        checkInput(); 
     }
 }

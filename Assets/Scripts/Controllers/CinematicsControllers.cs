@@ -17,6 +17,7 @@ public class CinematicsControllers : MonoBehaviour {
     }
 
     private void nextBackground() {
+        FXController.instance.PlayMiscEffect(FXController.MiscEffect.Transition);
         if (currentBackground < backgrounds.Length - 1) {
             currentBackground++;
             GetComponent<SpriteRenderer>().sprite = backgrounds[currentBackground];

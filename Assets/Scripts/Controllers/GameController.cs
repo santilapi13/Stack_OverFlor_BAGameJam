@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void updateCombo() {
-        comboOutput.text = "X" + comboMultiplier;
+        comboOutput.text = "x" + comboMultiplier;
     }
 
     public int getLevel() {
@@ -83,6 +83,5 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
     }
 }
