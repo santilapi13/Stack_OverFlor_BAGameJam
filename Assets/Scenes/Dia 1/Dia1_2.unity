@@ -281,6 +281,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 959147813}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 351.5176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "es un amor, me va a hacer compa\xF1\xEDa mientras laburo"
@@ -695,6 +707,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -68.267
       objectReference: {fileID: 0}
+    - target: {fileID: 8034908196996861908, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -128
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034908196996861908, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 106.86
+      objectReference: {fileID: 0}
     - target: {fileID: 8046492612544620519, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
       propertyPath: m_Text
       value: 00:05
@@ -712,6 +732,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 959147813}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 365.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -148
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: mm bueno, en 15 estoy

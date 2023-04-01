@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1944826514}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 272.0589
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -162.99995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 142.02884
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "sii hermosa la plantita, muchas gracias \u2764"
@@ -344,6 +356,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1944826514}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 272.0589
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -162.99995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 178
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "hoy es mi primer d\xEDa de laburo, deseame suerte\r"
@@ -576,6 +600,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1944826514}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 342.1392
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -163
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 118
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "bien ma! Reci\xE9n termin\xE9 de acomodar todo porque ayer qued\xE9

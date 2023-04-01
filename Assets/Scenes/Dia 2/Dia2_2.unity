@@ -401,6 +401,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684491225}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 363.2837
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 123
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: uhh si, mil disculpas!

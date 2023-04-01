@@ -192,6 +192,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 200337923}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 687.3743
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -151
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 77
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "Buenas tardes. \xBFPor qu\xE9 habr\xEDan de creer algo as\xED? Yo puedo
@@ -596,6 +608,14 @@ PrefabInstance:
     - target: {fileID: 7012451951987922055, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -224.6597
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034908196996861908, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 615.7158
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034908196996861908, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 8046492612544620519, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
       propertyPath: m_Text

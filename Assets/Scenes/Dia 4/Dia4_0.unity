@@ -346,63 +346,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1170761671
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 940.6897
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 564.26965
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.491294
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594376, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397379252410594378, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
-      propertyPath: m_Name
-      value: SoundEffectsController
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98bf0cc50107f694a865709191bc09ff, type: 3}
 --- !u!1001 &1364011905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,6 +353,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 577560790}
     m_Modifications:
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 328.4784
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 117
+      objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "dale perfecto, quedamos as\xED!"
