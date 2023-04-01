@@ -47,4 +47,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 3/Dia3_2.unity
     guid: ff6fd9b1cf51cf4499ac8666ef569054
+  - enabled: 1
+    path: Assets/Scenes/Dia 4/Dia4_0.unity
+    guid: 2fb134b72456e194cb07767c08a92a10
+  - enabled: 1
+    path: Assets/Scenes/Dia 4/Dia4_1.unity
+    guid: 2b95cf4555429c04699ab129a9e02af6
+  - enabled: 1
+    path: Assets/Scenes/Dia 4/Dia4_2.unity
+    guid: 8c122ee76de36b04e9afd917b28b4bef
+  - enabled: 1
+    path: Assets/Scenes/Dia 4/Dia4_3.unity
+    guid: bbfb442b40eb16d43b08788c2d0fbd4f
   m_configObjects: {}
