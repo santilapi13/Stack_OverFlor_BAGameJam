@@ -414,11 +414,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: times.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: times.Array.data[0]
-      value: 30
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
+      propertyPath: times.Array.data[1]
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834070, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: m_RootOrder
@@ -524,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 7687375298825482331, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a6759b99832c5c498ab279ac35de8aa, type: 3}
+      objectReference: {fileID: 21300000, guid: 94c8dc01cac1fb048a51c518e53e2607, type: 3}
     - target: {fileID: 7687375299362017296, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.2
@@ -549,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds: []
-  nextScene: Dia4_3
+  nextScene: Dia5_2
 --- !u!1 &896491156
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 632969383}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: thisScene
-      value: Dia4_2
+      value: Dia5_1
       objectReference: {fileID: 0}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: wordOutput

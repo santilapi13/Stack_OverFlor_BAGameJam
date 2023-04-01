@@ -414,11 +414,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: times.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: times.Array.data[0]
-      value: 30
+      value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
+      propertyPath: times.Array.data[1]
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
+      propertyPath: times.Array.data[2]
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7416137585076834069, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
+      propertyPath: times.Array.data[3]
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 7416137585076834070, guid: 04cded6d303d5cb43b90dc74505d405b, type: 3}
       propertyPath: m_RootOrder
@@ -524,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 7687375298825482331, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a6759b99832c5c498ab279ac35de8aa, type: 3}
+      objectReference: {fileID: 21300000, guid: 94c8dc01cac1fb048a51c518e53e2607, type: 3}
     - target: {fileID: 7687375299362017296, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.2
@@ -549,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgrounds: []
-  nextScene: Dia4_3
+  nextScene: Dia6_2
 --- !u!1 &896491156
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,26 +655,38 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.data[0]
-      value: 55
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.data[1]
-      value: 43
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.data[2]
-      value: 35
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.data[3]
-      value: 22
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
       propertyPath: times.Array.data[4]
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
+      propertyPath: times.Array.data[5]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
+      propertyPath: times.Array.data[6]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293408873692326360, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
+      propertyPath: times.Array.data[7]
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8293408873692326364, guid: 723c0c37e4ad5614599b74fa4561760f, type: 3}
@@ -780,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 632969383}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: thisScene
-      value: Dia4_2
+      value: Dia6_1
       objectReference: {fileID: 0}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: wordOutput

@@ -285,7 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1399e5c085209f748bb6fb44d21ac8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgrounds: []
+  backgrounds:
+  - {fileID: 21300000, guid: f776074905a9dd74a83f355fe1fe85be, type: 3}
   nextScene: Dia2_1
 --- !u!61 &365954930
 BoxCollider2D:

@@ -23,9 +23,9 @@ public class CoffeeMachine : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if (Sleep.instance.getisActivated() && (!coffee) && (!maikingCoffee))
+        if ((!coffee) && (!maikingCoffee))
             StartCoroutine(makeCoffee());
-        else if(coffee){
+        else if(Sleep.instance.getisActivated() && coffee){
             FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.DrinkCoffee);
             Sleep.instance.animationEnd();
             TyperController.instance.addTime(7);
