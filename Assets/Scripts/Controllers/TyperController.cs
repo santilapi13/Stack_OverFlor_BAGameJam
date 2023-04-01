@@ -26,6 +26,9 @@ public class TyperController : MonoBehaviour {
     private Color colorDestino = Color.green;
     private bool pause = true;
     private float introTimer = 3;
+    public string thisScene;
+    static private bool firstTimeLose = true;
+    private bool extraLife = false;
 
     // Singleton instance.
     public static TyperController instance = null;
@@ -57,6 +60,11 @@ public class TyperController : MonoBehaviour {
             aux = 0;
         updateTimer();
         return aux;
+    }
+
+    public void addTime(float time) {
+        timer += time;
+        updateTimer();
     }
     
     private void updateTimer() {
@@ -163,12 +171,30 @@ public class TyperController : MonoBehaviour {
         FXController.instance.effectSource.Stop();
         updateTimer();
         FXController.instance.PlayMiscEffect(FXController.MiscEffect.Message);
-        message.GetComponent<SpriteRenderer>().enabled = true;
-        nextWordOutput.color = Color.green;
-        nextWordOutput.text = "Nivel finalizado";
-        wordOutput.color = Color.green;
-        wordOutput.fontSize = 30;
-        wordOutput.text = "¡Nuevo mensaje!";
+        if((GameController.instance.canPassLevel())){
+             message.GetComponent<SpriteRenderer>().enabled = true;
+            nextWordOutput.color = Color.green;
+            nextWordOutput.text = "Nivel finalizado";
+            wordOutput.color = Color.green;
+            wordOutput.fontSize = 30;
+            wordOutput.text = "¡Nuevo mensaje!";
+        }else if(firstTimeLose){
+            firstTimeLose = false;
+            message.GetComponent<SpriteRenderer>().enabled = true;
+            nextWordOutput.color = Color.red;
+            nextWordOutput.text = "Nivel Fallido";
+            wordOutput.color = Color.green;
+            wordOutput.fontSize = 30;
+            wordOutput.text = "¿Nuevo mensaje?";
+            extraLife = true;
+        }else{
+            nextWordOutput.color = Color.red;
+            nextWordOutput.text = "Nivel Fallido";
+            wordOutput.color = Color.red;
+            wordOutput.fontSize = 30;
+            wordOutput.text = "Reintentar?";
+        }
+       
     }
 
     private void initialCountdown() {
@@ -199,7 +225,17 @@ public class TyperController : MonoBehaviour {
             pause = false;
         else if (timer >= 60)
             this.initialCountdown();
-        else if (timer <= 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
+        else if(timer <= 0 && !(GameController.instance.canPassLevel() && !extraLife)) {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)) {
+                TransitionsController.instance.changeScene(thisScene);
+            }
+        }else if(extraLife && timer <= 0) {
+                //aca el cambio de escena al mensaje de nustra familia
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)) {
+                    extraLife = false;
+                    TransitionsController.instance.changeScene(thisScene);
+                }
+        }else if (timer <= 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
             CinematicsControllers.instance.nextBackground();
     }
     

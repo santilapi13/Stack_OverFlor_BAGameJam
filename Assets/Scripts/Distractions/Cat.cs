@@ -16,6 +16,15 @@ public class Cat : Distraction
         else if (instance != this)
             Destroy(gameObject);
     }
+
+       protected IEnumerator Wait(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        if (isActivated) {
+            GetComponent<SpriteRenderer>().enabled = false;
+            GameController.instance.removeMoney(5);
+            isActivated = false;
+        }
+    }
     
      private Cat() {
         this.times = new int[] {55};

@@ -56,6 +56,9 @@ public class Sleep : Distraction
             StartCoroutine(Wait(1.5f));
             playng = true;
         } else if (TyperController.instance.getTimer() == 0) {
+            animation1.SetBool("Sueño", false);
+            animation2.SetBool("Sueño", false);
+            playng = false;
             isActivated = false;
         }
     }

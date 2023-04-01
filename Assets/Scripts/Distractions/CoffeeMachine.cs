@@ -8,10 +8,11 @@ public class CoffeeMachine : MonoBehaviour
         // Singleton instance.
     public static CoffeeMachine instance = null;
     private bool coffee = false;
+    private bool maikingCoffee = false;
     public Sprite[] sprites;
     public SpriteRenderer cup;
     public SpriteRenderer coffeeDrop;
-      public SpriteRenderer coffeeDrop2;
+    public SpriteRenderer coffeeDrop2;
 	
     // Initialize the singleton instance.
     private void Awake() {
@@ -22,20 +23,22 @@ public class CoffeeMachine : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if (Sleep.instance.getisActivated() && (!coffee))
+        if (Sleep.instance.getisActivated() && (!coffee) && (!maikingCoffee))
             StartCoroutine(makeCoffee());
         else if(coffee){
             Sleep.instance.animationEnd();
+            TyperController.instance.addTime(7);
             cup.sprite = sprites[0];
             coffee = false;
         }
-    
     }
     
     private IEnumerator makeCoffee(){
+        maikingCoffee = true;
         coffeeDrop.enabled = true;
         coffeeDrop2.enabled = true;
         yield return new WaitForSeconds(3f);
+        maikingCoffee = false;
         coffeeDrop.enabled = false;
         coffeeDrop2.enabled = false;
         cup.sprite = sprites[1];
@@ -53,6 +56,12 @@ public class CoffeeMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (TyperController.instance.getTimer() == 0){
+            coffeeDrop.enabled = false;
+            coffeeDrop2.enabled = false;
+            cup.sprite = sprites[0];
+            coffee = false;
+        }
+
     }
 }

@@ -13,13 +13,17 @@ public abstract class Distraction : MonoBehaviour {
     protected Vector3[] positions; 
     protected Animator animator;
     protected FXController.DistractionEffect soundEffect;
+    protected bool isBaby = false;
 
     protected IEnumerator Wait(float seconds) {
         yield return new WaitForSeconds(seconds);
         if (isActivated) {
-            GetComponent<SpriteRenderer>().enabled = false;
+            if(isBaby)
             TyperController.instance.wordError();
-            isActivated = false;
+            else
+                 GameController.instance.removeMoney(5);
+             GetComponent<SpriteRenderer>().enabled = false;
+             isActivated = false;
         }
     }
     

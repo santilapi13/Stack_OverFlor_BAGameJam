@@ -23,6 +23,7 @@ public class Baby : Distraction {
         this.reactionTime = 3;
         this.positions = new Vector3[] { new Vector3(4, -2, -4), new Vector3(3, -1, -4), new Vector3(4, 0, -4) };
         this.soundEffect = FXController.DistractionEffect.BabySad;
+        this.isBaby = true;
     }
 
     private void OnMouseDown() {
