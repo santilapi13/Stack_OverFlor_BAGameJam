@@ -37,6 +37,7 @@ public class Cat : Distraction
     private void OnMouseDown() {
         if (isActivated) {
             if (numberOfClicks == 2) {
+                FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
                 FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatHappy);
                 GetComponent<SpriteRenderer>().enabled = false;
                 isActivated = false;

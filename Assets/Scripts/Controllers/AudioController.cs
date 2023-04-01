@@ -24,7 +24,7 @@ public class AudioController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if ((int)TyperController.instance.getIntroTimer() == 3) {
+        if ((int)TyperController.instance.getIntroTimer() >= 3 && !musicSource.isPlaying) {
             musicSource.PlayOneShot(musicSource.clip);
         } else if (TyperController.instance.getTimer() <= 0)
             musicSource.Stop();

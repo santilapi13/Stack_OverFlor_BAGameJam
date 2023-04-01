@@ -12,6 +12,7 @@ public class TyperController : MonoBehaviour {
     public Text nextWordOutput = null;
     public Image timerOutput = null;
     public GameObject message = null;
+    public Image introText = null;
     
     private string remainingWord = string.Empty;
     private static string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
@@ -22,10 +23,11 @@ public class TyperController : MonoBehaviour {
     private bool errorInTheWord = false;
     private int wordStreak = 0;
     private int letterindex = 0;
+    private float initialTime;
     public float timer;
     private Color colorDestino = Color.green;
     private bool pause = true;
-    private float introTimer = 3;
+    public float introTimer = 3;
     public string thisScene;
     static private bool firstTimeLose = true;
     private bool extraLife = false;
@@ -52,7 +54,7 @@ public class TyperController : MonoBehaviour {
     public float getIntroTimer() {
         return introTimer;
     }
-    
+
     public float removeTime(float time, float aux) {
         if (aux - time > 0)
             aux -= time;
@@ -68,7 +70,7 @@ public class TyperController : MonoBehaviour {
     }
     
     private void updateTimer() {
-        timerOutput.fillAmount = (timer / 60);
+        timerOutput.fillAmount = (timer / initialTime);
     }
     
     private void setNextWord() {
@@ -199,7 +201,9 @@ public class TyperController : MonoBehaviour {
 
     private void initialCountdown() {
         introTimer = this.removeTime(Time.deltaTime, introTimer);
-        if (introTimer <= 0) {
+        if (introTimer < 4f && introTimer > 3.2f) {
+            introText.GetComponent<CanvasGroup>().alpha = 0;
+        } else if (introTimer <= 0) {
             pause = false;
             setNextWord();
             updateTimer();
@@ -211,6 +215,7 @@ public class TyperController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         message.GetComponent<SpriteRenderer>().enabled = false;
+        this.initialTime = timer;
     }
 
     // Update is called once per frame

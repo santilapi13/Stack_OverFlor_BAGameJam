@@ -26,6 +26,7 @@ public class CoffeeMachine : MonoBehaviour
         if (Sleep.instance.getisActivated() && (!coffee) && (!maikingCoffee))
             StartCoroutine(makeCoffee());
         else if(coffee){
+            FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.DrinkCoffee);
             Sleep.instance.animationEnd();
             TyperController.instance.addTime(7);
             cup.sprite = sprites[0];
@@ -34,6 +35,8 @@ public class CoffeeMachine : MonoBehaviour
     }
     
     private IEnumerator makeCoffee(){
+        FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.MachineSound);
+        FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.PourCoffee);
         maikingCoffee = true;
         coffeeDrop.enabled = true;
         coffeeDrop2.enabled = true;
@@ -47,8 +50,7 @@ public class CoffeeMachine : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         coffeeDrop.enabled = false;
         coffeeDrop2.enabled = false;
     }

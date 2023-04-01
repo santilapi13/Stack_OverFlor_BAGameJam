@@ -929,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 965991758}
     - target: {fileID: 9132146956522626124, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: moneyToPassLevel
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}

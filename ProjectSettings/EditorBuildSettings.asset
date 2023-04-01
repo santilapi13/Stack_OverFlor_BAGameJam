@@ -20,4 +20,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial_2.unity
     guid: 276047fa2d3e72c4395a97c616968dc6
+  - enabled: 1
+    path: Assets/Scenes/Dia 1/Dia1_0.unity
+    guid: 8ce4f2e3b6b35e6458ae0278eefac549
+  - enabled: 1
+    path: Assets/Scenes/Dia 1/Dia1_1.unity
+    guid: e8c78ffbcd1781845b4572fc7a118b57
+  - enabled: 1
+    path: Assets/Scenes/Dia 1/Dia1_2.unity
+    guid: 259fb884b48ed7349807e66bd3799a70
+  - enabled: 1
+    path: Assets/Scenes/Dia 2/Dia2_0.unity
+    guid: d293e89ab7002b34e9a0c456e6c29fc0
+  - enabled: 1
+    path: Assets/Scenes/Dia 2/Dia2_1.unity
+    guid: 8d810b6aa4110764d94fc1502d00f52b
+  - enabled: 1
+    path: Assets/Scenes/Dia 2/Dia2_2.unity
+    guid: 4bf29a0cfa50abf49b712c19e979e80b
+  - enabled: 1
+    path: Assets/Scenes/Dia 3/Dia3_0.unity
+    guid: 77c61a06ba5af93488be9df299ada4f0
+  - enabled: 1
+    path: Assets/Scenes/Dia 3/Dia3_1.unity
+    guid: cb7df46955197864a89a53ae8b603c4e
+  - enabled: 1
+    path: Assets/Scenes/Dia 3/Dia3_2.unity
+    guid: ff6fd9b1cf51cf4499ac8666ef569054
   m_configObjects: {}

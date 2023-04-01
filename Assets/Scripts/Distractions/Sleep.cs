@@ -30,12 +30,11 @@ public class Sleep : Distraction
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
     }
 
     public void animationEnd(){
+        FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
         animation1.SetBool("Sueño", false);
         animation2.SetBool("Sueño", false);
         playng = false;
@@ -50,6 +49,7 @@ public class Sleep : Distraction
     void Update()
     {
         if (mustActivate() && TyperController.instance.getTimer() > 0  && !playng) {
+            this.soundEffect = FXController.DistractionEffect.Yawn;
             isActivated = true;
             animation1.SetBool("Sueño", true);
             animation2.SetBool("Sueño", true);

@@ -19,10 +19,13 @@ public abstract class Distraction : MonoBehaviour {
         yield return new WaitForSeconds(seconds);
         if (isActivated) {
             if(isBaby)
-            TyperController.instance.wordError();
-            else
-                 GameController.instance.removeMoney(5);
-             GetComponent<SpriteRenderer>().enabled = false;
+                TyperController.instance.wordError();
+            else {
+                FXController.instance.PlayTypingEffect(FXController.TypingEffect.Error);
+                FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatTimeOut);
+                GameController.instance.removeMoney(5);
+            }
+            GetComponent<SpriteRenderer>().enabled = false;
              isActivated = false;
         }
     }

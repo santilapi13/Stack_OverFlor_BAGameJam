@@ -29,6 +29,7 @@ public class Baby : Distraction {
     private void OnMouseDown() {
         if (isActivated) {
             FXController.instance.effectSource.Stop();
+            FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
             FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.BabyHappy);
             GetComponent<SpriteRenderer>().enabled = false;
             isActivated = false;

@@ -7,6 +7,7 @@ public class FXController : MonoBehaviour {
     public AudioSource effectSource;
     public AudioClip[] catEffect;
     public AudioClip[] babyEffect;
+    public AudioClip[] coffeeEffect;
     public AudioClip typingErrorEffect;
     public AudioClip typingSuccessEffect;
     public AudioClip transitionEffect;
@@ -15,8 +16,13 @@ public class FXController : MonoBehaviour {
     public enum DistractionEffect {
         CatHappy,
         CatSad,
+        CatTimeOut,
         BabyHappy,
         BabySad,
+        Yawn,
+        PourCoffee,
+        DrinkCoffee,
+        MachineSound,
     }
 
     public enum TypingEffect {
@@ -48,9 +54,19 @@ public class FXController : MonoBehaviour {
                 break;
             case DistractionEffect.CatHappy: effectSource.PlayOneShot(catEffect[1]);
                 break;
+            case DistractionEffect.CatTimeOut: effectSource.PlayOneShot(catEffect[2]);
+                break;
             case DistractionEffect.BabyHappy: effectSource.PlayOneShot(babyEffect[1]);
                 break;
             case DistractionEffect.BabySad: effectSource.PlayOneShot(babyEffect[0]);
+                break;
+            case DistractionEffect.Yawn: effectSource.PlayOneShot(coffeeEffect[0]);
+                break;
+            case DistractionEffect.MachineSound: effectSource.PlayOneShot(coffeeEffect[1]);
+                break;
+            case DistractionEffect.PourCoffee: effectSource.PlayOneShot(coffeeEffect[2]);
+                break;
+            case DistractionEffect.DrinkCoffee: effectSource.PlayOneShot(coffeeEffect[3]);
                 break;
         }
     }
