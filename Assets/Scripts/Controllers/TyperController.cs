@@ -15,9 +15,7 @@ public class TyperController : MonoBehaviour {
     public Image introText = null;
     
     private string remainingWord = string.Empty;
-    private static string[] nextWord = {"hola mundo","if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean",
-    "while","hacer","for","repeat","until","break","default","funcion","function","static","return","objeto","clase","void","public","protected","nuevo","importar","package","main","seguir;","continuar;","detener;",
-    "crustaceo","align","(x,y,z)","sumar(a,b)","restar(a,c)","01101111","color.verde","color.azul","color=FF0000","jugar","error404"}; 
+    private static string[] nextWord = {"if(true)","else","variable=0","var=2","palabra","mostrar(lista)","error","mostrar(arbol)","declaracion","include","integer","character","real","boolean","while","hacer","for","repeat","until","break","default","funcion","function","static","return","objeto","clase","void","public","protected","nuevo","importar","package","main","seguir;","continuar;","detener;","crustaceo","align","sumar(a,b)","restar(a,c)","01101111","color.verde","color.azul","desapilar","jugar","error404","stack","overflow","validacion","1+1","asignacion"}; 
     private List <string> words = new List<string>(nextWord);
     private string comingWord = string.Empty;
     private bool errorInTheWord = false;

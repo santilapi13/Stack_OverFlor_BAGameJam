@@ -292,6 +292,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c229dd72406aad54d97a823b6c6bd760, type: 3}
+--- !u!114 &306647075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7890051799329921022, guid: c229dd72406aad54d97a823b6c6bd760, type: 3}
+  m_PrefabInstance: {fileID: 306647074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436698315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 868135698976331609, guid: 7f8357fedec9e9e45a556fcd5789d949, type: 3}
@@ -532,6 +543,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 9132146955147345152, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3017044859627d845a6aee9434e900e1, type: 3}
+    - target: {fileID: 9132146955147345155, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: noIntroMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 3017044859627d845a6aee9434e900e1, type: 3}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: timer
       value: 60
@@ -565,9 +584,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 277712895}
     - target: {fileID: 9132146956522626124, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: wordMultiplier
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132146956522626124, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: moneyToPassLevel
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9132146956522626124, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: moneyToPassLevelOutput
+      value: 
+      objectReference: {fileID: 306647075}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
 --- !u!114 &947369515 stripped

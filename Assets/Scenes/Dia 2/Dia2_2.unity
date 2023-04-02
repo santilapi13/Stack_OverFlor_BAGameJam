@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e9568716ed196614d8941d2fa0912438, type: 3}
     - target: {fileID: 2134275748116615190, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}
       propertyPath: nextScene
-      value: Dia3_0
+      value: Dia2_3
       objectReference: {fileID: 0}
     - target: {fileID: 2134275748574827889, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}
       propertyPath: m_Name

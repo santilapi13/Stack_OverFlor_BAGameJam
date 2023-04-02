@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial_2.unity
     guid: 276047fa2d3e72c4395a97c616968dc6
   - enabled: 1
+    path: Assets/Scenes/Tutorial/Tutorial_3.unity
+    guid: acc79fdff94c16e4db1fe7819eedabe1
+  - enabled: 1
     path: Assets/Scenes/Dia 1/Dia1_0.unity
     guid: 8ce4f2e3b6b35e6458ae0278eefac549
   - enabled: 1
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 1/Dia1_2.unity
     guid: 259fb884b48ed7349807e66bd3799a70
+  - enabled: 1
+    path: Assets/Scenes/Dia 1/Dia1_3.unity
+    guid: 4d5103f89ae235c4ba6167b0c3755be3
   - enabled: 1
     path: Assets/Scenes/Dia 2/Dia2_0.unity
     guid: d293e89ab7002b34e9a0c456e6c29fc0
@@ -39,6 +45,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Dia 2/Dia2_2.unity
     guid: 4bf29a0cfa50abf49b712c19e979e80b
   - enabled: 1
+    path: Assets/Scenes/Dia 2/Dia2_3.unity
+    guid: 8a54f8ddd69f6434db4455ee1453cbe4
+  - enabled: 1
     path: Assets/Scenes/Dia 3/Dia3_0.unity
     guid: 77c61a06ba5af93488be9df299ada4f0
   - enabled: 1
@@ -47,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 3/Dia3_2.unity
     guid: ff6fd9b1cf51cf4499ac8666ef569054
+  - enabled: 1
+    path: Assets/Scenes/Dia 3/Dia3_3.unity
+    guid: 3aa54ca11cb08e14b99d6c19102bf4d8
   - enabled: 1
     path: Assets/Scenes/Dia 4/Dia4_0.unity
     guid: 2fb134b72456e194cb07767c08a92a10
@@ -60,6 +72,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Dia 4/Dia4_3.unity
     guid: bbfb442b40eb16d43b08788c2d0fbd4f
   - enabled: 1
+    path: Assets/Scenes/Dia 4/Dia4_4.unity
+    guid: 285a0a529516a8b40a6ab26359a57072
+  - enabled: 1
     path: Assets/Scenes/Dia 5/Dia5_0.unity
     guid: f490bb75e59cc7344a07e94f0a53df31
   - enabled: 1
@@ -68,6 +83,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 5/Dia5_2.unity
     guid: 3dc233a1df616e94cb6b8e776785c31f
+  - enabled: 1
+    path: Assets/Scenes/Dia 5/Dia5_3.unity
+    guid: f4bc3ad1e28f6fe4499f3efd6d9d4adf
   - enabled: 1
     path: Assets/Scenes/Dia 6/Dia6_0.unity
     guid: 3523fdb25109460498fe9ec1c5a5337a
@@ -80,6 +98,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 6/Dia6_3.unity
     guid: d69d851aadbeb3f4ba60cbe2a412e6da
+  - enabled: 1
+    path: Assets/Scenes/Dia 6/Dia6_4.unity
+    guid: dbff28e33b3367745a887c7391d14605
   - enabled: 1
     path: Assets/Scenes/Dia 7/Dia7_0.unity
     guid: 00d2e8d096e7cde4992caa7a5b0689a6
