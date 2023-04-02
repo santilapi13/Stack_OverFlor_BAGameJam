@@ -59,4 +59,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dia 4/Dia4_3.unity
     guid: bbfb442b40eb16d43b08788c2d0fbd4f
+  - enabled: 1
+    path: Assets/Scenes/Dia 5/Dia5_0.unity
+    guid: f490bb75e59cc7344a07e94f0a53df31
+  - enabled: 1
+    path: Assets/Scenes/Dia 5/Dia5_1.unity
+    guid: 894e23ed9d1025948a67bac552e64c86
+  - enabled: 1
+    path: Assets/Scenes/Dia 5/Dia5_2.unity
+    guid: 3dc233a1df616e94cb6b8e776785c31f
+  - enabled: 1
+    path: Assets/Scenes/Dia 6/Dia6_0.unity
+    guid: 3523fdb25109460498fe9ec1c5a5337a
+  - enabled: 1
+    path: Assets/Scenes/Dia 6/Dia6_1.unity
+    guid: d00001c682c45854c96f9689bbe93d46
+  - enabled: 1
+    path: Assets/Scenes/Dia 6/Dia6_2.unity
+    guid: 5b993ab3fa98ff3488c16fd7d090f165
+  - enabled: 1
+    path: Assets/Scenes/Dia 6/Dia6_3.unity
+    guid: d69d851aadbeb3f4ba60cbe2a412e6da
+  - enabled: 1
+    path: Assets/Scenes/Dia 7/Dia7_0.unity
+    guid: 00d2e8d096e7cde4992caa7a5b0689a6
+  - enabled: 1
+    path: Assets/Scenes/Dia 7/Dia7_1.unity
+    guid: aac83915092f18c47b519c496c705a61
+  - enabled: 1
+    path: Assets/Scenes/Dia 7/Dia7_2.unity
+    guid: 3b7d1cb5a2c0f4b408a103de36a6c9b7
+  - enabled: 1
+    path: Assets/Scenes/Dia 7/Dia7_3.unity
+    guid: fd9ba888a22b27e40938e3c435c2d226
+  - enabled: 1
+    path: Assets/Scenes/Dia 7/Dia7_4.unity
+    guid: b3468669bd7866e4ab8f6d36164cb318
+  - enabled: 1
+    path: Assets/Scenes/chatPerder.unity
+    guid: 3399318537c2bd64f8485612d0fca4d0
   m_configObjects: {}

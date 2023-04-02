@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: moneyToPassLevel
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 9132146956522626124, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: moneyToPassLevelOutput
+      value: 
+      objectReference: {fileID: 5766935693716638137}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
 --- !u!114 &1807146097 stripped
@@ -679,3 +683,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c229dd72406aad54d97a823b6c6bd760, type: 3}
+--- !u!114 &5766935693716638137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7890051799329921022, guid: c229dd72406aad54d97a823b6c6bd760, type: 3}
+  m_PrefabInstance: {fileID: 5766935693716638136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

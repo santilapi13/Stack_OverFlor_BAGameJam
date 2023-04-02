@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
    
     public Text moneyOutput = null;
     public Text comboOutput = null;
+    public Text moneyToPassLevelOutput = null;
     private int money = 0;
     public int wordMultiplier;
     private int comboMultiplier = 1;
@@ -71,10 +72,14 @@ public class GameController : MonoBehaviour {
 
     private void updateMoney() {
         if(money < 1000)
-            moneyOutput.text = "$$ " + money + "/" + moneyToPassLevel;
+            moneyOutput.text = "$$ " + money;
         else
-            moneyOutput.text = "$$ " + money/1000 + "." + (money%1000)/100 + "k" + "/" + moneyToPassLevel;   
+            moneyOutput.text = "$$ " + money/1000 + "." + (money%1000)/100 + "k";   
 
+    }
+
+    private void updateMoneyToPassLevel() {
+        moneyToPassLevelOutput.text = "$ " + moneyToPassLevel;
     }
 
     public bool canPassLevel() {
@@ -86,6 +91,7 @@ public class GameController : MonoBehaviour {
     void Start(){
         updateMoney();
         updateCombo();
+        updateMoneyToPassLevel();
     }
 
     // Update is called once per frame

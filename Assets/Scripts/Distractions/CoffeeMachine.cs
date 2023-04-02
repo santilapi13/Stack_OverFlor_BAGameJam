@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoffeeMachine : MonoBehaviour
 {
 
         // Singleton instance.
+    public Text coffeText;
+    public CanvasGroup canvasGroup;
     public static CoffeeMachine instance = null;
     private bool coffee = false;
     private bool maikingCoffee = false;
@@ -63,6 +66,20 @@ public class CoffeeMachine : MonoBehaviour
             coffeeDrop2.enabled = false;
             cup.sprite = sprites[0];
             coffee = false;
+        }
+        
+        if(Sleep.instance.getisActivated() && coffee){
+            coffeText.text = "¡Café listo!";
+            canvasGroup.alpha = 1;
+        }
+        else if(Sleep.instance.getisActivated() && !coffee)
+        {
+            coffeText.text = "¿Un cafecito?";
+            canvasGroup.alpha = 1;
+        }
+        else{
+            coffeText.text = "";
+            canvasGroup.alpha = 0;
         }
 
     }

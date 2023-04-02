@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1767947130327362973, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}
       propertyPath: Mensaje.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1767947130327362973, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}
       propertyPath: Mensaje.Array.data[0]
@@ -262,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2134275749351313712, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}
       propertyPath: m_Text
-      value: "N\xFAmero Desconocido"
+      value: +54 9 223 580 3863
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6630fe7ff3e65479fc89c7ba827bf0, type: 3}

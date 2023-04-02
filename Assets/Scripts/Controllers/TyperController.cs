@@ -181,14 +181,12 @@ public class TyperController : MonoBehaviour {
             wordOutput.fontSize = 30;
             wordOutput.text = "¡Nuevo mensaje!";
         }else if(firstTimeLose){
-            firstTimeLose = false;
             message.GetComponent<SpriteRenderer>().enabled = true;
             nextWordOutput.color = Color.red;
             nextWordOutput.text = "Nivel Fallido";
             wordOutput.color = Color.green;
             wordOutput.fontSize = 30;
             wordOutput.text = "¿Nuevo mensaje?";
-            extraLife = true;
         }else{
             nextWordOutput.color = Color.red;
             nextWordOutput.text = "Nivel Fallido";
@@ -230,15 +228,15 @@ public class TyperController : MonoBehaviour {
             pause = false;
         else if (timer >= 60)
             this.initialCountdown();
-        else if(timer <= 0 && !(GameController.instance.canPassLevel() && !extraLife)) {
+        else if(timer <= 0 && !(GameController.instance.canPassLevel()) && !firstTimeLose) {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)) {
                 TransitionsController.instance.changeScene(thisScene);
             }
-        }else if(extraLife && timer <= 0) {
+        }else if( firstTimeLose  && timer <= 0 && !(GameController.instance.canPassLevel())) {
                 //aca el cambio de escena al mensaje de nustra familia
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)) {
-                    extraLife = false;
-                    TransitionsController.instance.changeScene(thisScene);
+                    firstTimeLose = false;
+                    CinematicsControllers.instance.nextBackgroundToLose();
                 }
         }else if (timer <= 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)))
             CinematicsControllers.instance.nextBackground();

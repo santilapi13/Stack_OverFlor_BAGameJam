@@ -9,7 +9,8 @@ public class CinematicsControllers : MonoBehaviour {
 
     public Sprite[] backgrounds;
     private int currentBackground = 0;
-    public string nextScene;
+    public string nextScene = "";
+    static public string losingScene;
 
     static public CinematicsControllers instance;
     private void Awake() {
@@ -21,6 +22,10 @@ public class CinematicsControllers : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
+        if (nextScene == "")
+        {
+            nextScene = losingScene;
+        }
         
     }
 
@@ -32,6 +37,12 @@ public class CinematicsControllers : MonoBehaviour {
         } else {
             TransitionsController.instance.changeScene(nextScene);
         }
+    }
+    
+    public void nextBackgroundToLose()
+    {
+        losingScene = nextScene;
+        TransitionsController.instance.changeScene("chatPerder");
     }
     
     public void OnMouseDown() {
