@@ -10,6 +10,8 @@ The game explores the deconstruction of different social issues such as gender r
 
 This game was made in 10 days within the BA Game Jam that took place in Buenos Aires, Argentina.
 
+You can download it here: https://santilapi13.itch.io/stack-overflor
+
 # Credits
 
 Programming: Nahuel Bianca, Santiago Lapiana y Gonzalo Martino
