@@ -829,6 +829,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 9132146955147345152, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b6d6c4f50b0265c4a8895386c1ae20a1, type: 3}
+    - target: {fileID: 9132146955147345155, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
+      propertyPath: noIntroMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 4cc130566f5baf748bfc75a356a3548e, type: 3}
     - target: {fileID: 9132146956383092016, guid: 9e390efa689e4184988b9d10e7dce75c, type: 3}
       propertyPath: timer
       value: 60

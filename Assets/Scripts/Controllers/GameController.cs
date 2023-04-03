@@ -96,5 +96,9 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (canPassLevel())
+            this.moneyToPassLevelOutput.color = Color.Lerp(Color.green, Color.black, 0.5f);
+        else
+            this.moneyToPassLevelOutput.color = Color.black;
     }
 }

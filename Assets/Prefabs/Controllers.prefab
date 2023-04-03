@@ -78,7 +78,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8ad3e4ade35639b4db0503fa2556179d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b6d6c4f50b0265c4a8895386c1ae20a1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.728
   m_Pitch: 1
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 9132146955147345152}
-  noIntroMusic: {fileID: 8300000, guid: 3d8489486fa2da04c9cc5e18ebff8822, type: 3}
+  noIntroMusic: {fileID: 8300000, guid: 4cc130566f5baf748bfc75a356a3548e, type: 3}
 --- !u!1 &9132146956383092017
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +225,11 @@ MonoBehaviour:
   wordOutput: {fileID: 0}
   nextWordOutput: {fileID: 0}
   timerOutput: {fileID: 0}
+  message: {fileID: 0}
+  introText: {fileID: 0}
   timer: 0
+  introTimer: 3
+  thisScene: 
 --- !u!1 &9132146956522626125
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyOutput: {fileID: 0}
   comboOutput: {fileID: 0}
+  moneyToPassLevelOutput: {fileID: 0}
   wordMultiplier: 1
+  moneyToPassLevel: 3
   level: 0
 --- !u!1 &9132146956698933797
 GameObject:

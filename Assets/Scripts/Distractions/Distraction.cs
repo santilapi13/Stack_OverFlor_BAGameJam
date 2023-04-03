@@ -23,7 +23,8 @@ public abstract class Distraction : MonoBehaviour {
             else {
                 FXController.instance.PlayTypingEffect(FXController.TypingEffect.Error);
                 FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatTimeOut);
-                GameController.instance.removeMoney(5);
+                GameController.instance.removeMoney(15);
+                Cat.instance.resetNumberOfClicks();
             }
             GetComponent<SpriteRenderer>().enabled = false;
              isActivated = false;

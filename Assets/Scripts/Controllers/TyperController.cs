@@ -147,7 +147,7 @@ public class TyperController : MonoBehaviour {
                 errorInTheWord = false;
                 wordStreak++;
                 letterindex = 0;
-                if (wordStreak % 3 == 0 && GameController.instance.getComboMultiplier() < 5)
+                if (wordStreak % 3 == 0 && GameController.instance.getComboMultiplier() < 3)
                     GameController.instance.setComboMultiplier(GameController.instance.getComboMultiplier() + 1);
             }
         } else

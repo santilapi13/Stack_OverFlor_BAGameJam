@@ -21,11 +21,12 @@ public class IntroController : MonoBehaviour {
     }
 
     private void checkInput() {
-        if(Input.anyKeyDown) {
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape)) {
             string keyPressed = Input.inputString;
             if (keyPressed.Length == 1)
                enterLetter(keyPressed);
-        }
+        } else if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }    
     
 
