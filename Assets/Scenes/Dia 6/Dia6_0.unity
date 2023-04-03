@@ -983,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593588201053778163, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
       propertyPath: m_Text
-      value: "Dale. Con pap\xE1 estamos orgullosos de vos!"
+      value: Vas a ver que todo va a salir bien Florci
       objectReference: {fileID: 0}
     - target: {fileID: 5222306628001031819, guid: 62d51170caa0f584b99dcdf44b9a1e4d, type: 3}
       propertyPath: m_Pivot.x

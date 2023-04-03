@@ -602,7 +602,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 342.1392
+      value: 471.5207
       objectReference: {fileID: 0}
     - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -610,12 +610,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2110029332179207965, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 118
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 3122536469452048215, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
       value: "bien ma! Reci\xE9n termin\xE9 de acomodar todo porque ayer qued\xE9
-        matada.\n"
+        re cansada.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861079052239379554, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.8804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861079052239379554, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 95.9
       objectReference: {fileID: 0}
     - target: {fileID: 6261074940112361778, guid: 0dcd29f3bdf347848bf12a6a07d93a24, type: 3}
       propertyPath: m_Text
