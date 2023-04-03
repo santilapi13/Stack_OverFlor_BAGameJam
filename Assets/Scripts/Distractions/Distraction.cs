@@ -25,6 +25,7 @@ public abstract class Distraction : MonoBehaviour {
                 FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatTimeOut);
                 GameController.instance.removeMoney(15);
                 Cat.instance.resetNumberOfClicks();
+                GameController.instance.setComboMultiplier(1);
             }
             GetComponent<SpriteRenderer>().enabled = false;
              isActivated = false;

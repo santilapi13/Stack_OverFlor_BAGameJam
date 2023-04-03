@@ -19,6 +19,7 @@ public class Cat : Distraction
 
     public void resetNumberOfClicks() {
         this.numberOfClicks = 0;
+        GetComponent<SpriteRenderer>().sprite = sprites[numberOfClicks];
     }
 
     protected IEnumerator Wait(float seconds) {
@@ -40,7 +41,6 @@ public class Cat : Distraction
 
     private void OnMouseDown() {
         if (isActivated) {
-            GetComponent<SpriteRenderer>().sprite = sprites[numberOfClicks];
             if (numberOfClicks == 2) {
                 FXController.instance.PlayTypingEffect(FXController.TypingEffect.Success);
                 FXController.instance.PlayDistractionEffect(FXController.DistractionEffect.CatHappy);
@@ -52,6 +52,7 @@ public class Cat : Distraction
                 numberOfClicks++;
                 spawnAtRandomPosition();
             }
+            GetComponent<SpriteRenderer>().sprite = sprites[numberOfClicks];
         }   
     }
 
